@@ -60,16 +60,14 @@ def get_cols():
     return get_terminal_size().columns
 
 
-def wrap(text, up=False, lcols=15):
-    if up:
-        lcols = 16
-    return textwrap(text, get_cols() - lcols)
+def wrap(text, up=False, lcols=16):
+    return textwrap(text, get_cols() - 18)
 
 
 def print_gai(quote):
     gai, quote = G4I.rstrip().split('\n'), tuple(quote[:3])
     if len(quote) == 1:
-        quote = ('', '', quote[0])
+        quote = ('', quote[0], '')
     elif len(quote) == 2:
         quote = (quote[0], quote[1], '')
     if len(quote[-1]) >= get_cols() - 8:
