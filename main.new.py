@@ -99,7 +99,7 @@ def main():
     quotes = read(filename)
     filtered_quotes = filter_category(quotes)
     quote = choice(filtered_quotes)
-    fancy_quote = f' "{quote["quote"]}{rst}" --{bold}{quote["author"]}{rst} ({uline}{quote["category"]}{rst})'
+    fancy_quote = f' "{quote["quote"]}" --{rst}{bold}{quote["author"]}{rst} ({uline}{quote["category"]}{rst})'
     print_gai(wrap(fancy_quote))
 
 
